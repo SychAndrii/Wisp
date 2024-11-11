@@ -1,10 +1,10 @@
-﻿namespace Wisp
+﻿namespace Discord
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello THERE!");
+            Console.WriteLine("Hello, World!");
         }
     }
 }
