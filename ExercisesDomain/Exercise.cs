@@ -5,11 +5,11 @@ namespace ExercisesDomain
     public class Exercise
     {
         public Guid Id { get; }
-        public ExerciseName Name { get; }
-        public ExerciseDescription? Description { get; }
+        public ExerciseName Name { get; set; }
+        public ExerciseDescription? Description { get; set; }
         public DateTime CreatedAt { get; }
 
-        private Exercise(Guid id, ExerciseName name, ExerciseDescription? desc, DateTime createdAt)
+        protected Exercise(Guid id, ExerciseName name, ExerciseDescription? desc, DateTime createdAt)
         {
             Id = id;
             Name = name;
