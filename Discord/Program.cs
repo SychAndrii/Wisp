@@ -1,5 +1,6 @@
 ﻿using Discord.Interactions;
 using Discord.WebSocket;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Discord
@@ -36,10 +37,14 @@ namespace Discord
             var services = ConfigureServices();
             var app = services.GetRequiredService<App>();
 
-            string envToken = Environment.GetEnvironmentVariable("DiscordToken")
-                ?? throw new Exception("DiscordToken environment variable must be set!");
+            IConfigurationRoot config = new ConfigurationBuilder()
+                .AddJsonFile("appsettings.json")
+                .Build();
 
-            string? envGuildID = Environment.GetEnvironmentVariable("DiscordGuild");
+            string envToken = config["DiscordToken"]
+                ?? throw new Exception("DiscordToken setting must be set in appsettings.json!");
+
+            string? envGuildID = config["DiscordGuild"];
             if (envGuildID is not null && ulong.TryParse(envGuildID, out ulong guildID))
             {
                 await app.Startup(envToken, guildID);
