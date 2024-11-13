@@ -17,13 +17,30 @@ namespace SharedDomain.ValueObjects
             return string.Join(" ", input.Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries));
         }
 
-        public bool IsNullOrEmpty() => string.IsNullOrEmpty(Value);
+        public bool IsNullOrWhiteSpace() => string.IsNullOrWhiteSpace(Value);
 
         public int Length => Value.Length;
 
         public bool MatchesRegex(string pattern)
         {
             return Regex.IsMatch(Value, pattern);
+        }
+
+        public bool IsHttpLink()
+        {
+            const string httpPattern = @"^http:\/\/[a-zA-Z0-9\-_]+(\.[a-zA-Z0-9\-_]+)+(:\d+)?(\/.*)?$";
+            return MatchesRegex(httpPattern);
+        }
+
+        public bool IsHttpsLink()
+        {
+            const string httpsPattern = @"^https:\/\/[a-zA-Z0-9\-_]+(\.[a-zA-Z0-9\-_]+)+(:\d+)?(\/.*)?$";
+            return MatchesRegex(httpsPattern);
+        }
+
+        public bool OnlyContainsLettersAndSpaces()
+        {
+            return MatchesRegex(@"^[A-Za-z\s]+$");
         }
 
         public override string ToString() => Value;

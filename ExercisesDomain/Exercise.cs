@@ -1,37 +1,23 @@
-﻿using SharedDomain.Exceptions;
-using SharedDomain.ValueObjects;
+﻿using ExercisesDomain.ValueObjects;
 
 namespace ExercisesDomain
 {
     public class Exercise
     {
         public Guid Id { get; }
-        public NormalizedString Name { get; }
+        public ExerciseName Name { get; }
+        public ExerciseDescription? Description { get; }
 
-        private const int MAX_NAME_LENGTH = 150;
-
-        private Exercise(Guid id, NormalizedString name)
+        private Exercise(Guid id, ExerciseName name, ExerciseDescription? desc)
         {
             Id = id;
             Name = name;
+            Description = desc;
         }
 
-        public Exercise Create(Guid id, NormalizedString name)
+        public static Exercise Create(Guid id, ExerciseName name, ExerciseDescription? desc)
         {
-            if (name.IsNullOrEmpty())
-            {
-                throw new InvalidFieldException($"{nameof(name)} cannot be empty.");
-            }
-            if (name.Length > MAX_NAME_LENGTH)
-            {
-                throw new InvalidFieldException($"{nameof(name)} cannot be longer than {MAX_NAME_LENGTH} characters.");
-            }
-            if (!name.MatchesRegex(@"^[A-Za-z\s]+$"))
-            {
-                throw new InvalidFieldException($"{nameof(name)} cannot contain characters other than uppercase or lowercase letters and spaces.");
-            }
-
-            return new Exercise(id, name);
+            return new Exercise(id, name, desc);
         }
     }
 }
