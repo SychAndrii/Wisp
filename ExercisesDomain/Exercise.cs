@@ -7,22 +7,22 @@ namespace ExercisesDomain
         public Guid Id { get; }
         public ExerciseName Name { get; set; }
         public ExerciseDescription? Description { get; set; }
-        public DateTime CreatedAt { get; }
+        public ExerciseMuscles? Muscles { get; set; }
 
-        protected Exercise(Guid id, ExerciseName name, ExerciseDescription? desc, DateTime createdAt)
+        protected Exercise(Guid id, ExerciseName name, ExerciseDescription? desc, ExerciseMuscles? muscles)
         {
             Id = id;
             Name = name;
             Description = desc;
-            CreatedAt = createdAt;
+            Muscles = muscles;
         }
 
         public static Exercise Create(Guid id,
                                       ExerciseName name,
                                       ExerciseDescription? desc,
-                                      DateTime createdAt)
+                                      ExerciseMuscles? muscles)
         {
-            return new Exercise(id, name, desc, createdAt);
+            return new Exercise(id, name, desc, muscles);
         }
     }
 }
