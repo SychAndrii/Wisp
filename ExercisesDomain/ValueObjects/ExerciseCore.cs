@@ -1,20 +1,21 @@
-﻿using ExercisesDomain.ValueObjects;
-using ExercisesDomain.ValueObjects.Collections;
+﻿using ExercisesDomain.ValueObjects.Collections;
 using ExercisesDomain.ValueObjects.Enums;
 
-namespace ExercisesDomain.Aggregates
+namespace ExercisesDomain.ValueObjects
 {
-    public class Exercise
+    public class ExerciseCore
     {
         public Guid Id { get; }
         public ExerciseName Name { get; set; }
+        public ExerciseDifficulty Difficulty { get; set; }
         public ExerciseDescription? Description { get; set; }
         public ExerciseMuscles? Muscles { get; set; }
         public ExerciseEquipment? Equipment { get; set; }
         public ExerciseMetrics? Metrics { get; set; }
 
-        private Exercise(Guid id,
+        private ExerciseCore(Guid id,
                            ExerciseName name,
+                           ExerciseDifficulty difficulty,
                            ExerciseDescription? desc,
                            ExerciseMuscles? muscles,
                            ExerciseEquipment? equipment,
@@ -22,20 +23,22 @@ namespace ExercisesDomain.Aggregates
         {
             Id = id;
             Name = name;
+            Difficulty = difficulty;
             Description = desc;
             Muscles = muscles;
             Equipment = equipment;
             Metrics = metrics;
         }
 
-        public static Exercise Create(Guid id,
+        public static ExerciseCore Create(Guid id,
                                       ExerciseName name,
+                                      ExerciseDifficulty difficulty,
                                       ExerciseDescription? desc,
                                       ExerciseMuscles? muscles,
                                       ExerciseEquipment? equipment,
                                       ExerciseMetrics? metrics)
         {
-            return new Exercise(id, name, desc, muscles, equipment, metrics);
+            return new ExerciseCore(id, name, difficulty, desc, muscles, equipment, metrics);
         }
     }
 }

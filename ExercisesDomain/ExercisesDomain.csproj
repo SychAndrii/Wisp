@@ -10,4 +10,8 @@
     <ProjectReference Include="..\SharedDomain\SharedDomain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Aggregates\" />
+  </ItemGroup>
+
 </Project>
