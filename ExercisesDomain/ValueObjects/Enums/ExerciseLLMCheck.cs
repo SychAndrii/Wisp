@@ -1,4 +1,4 @@
-﻿namespace ExercisesDomain.ValueObjects
+﻿namespace ExercisesDomain.ValueObjects.Enums
 {
     public enum ExerciseLLMCheck
     {
