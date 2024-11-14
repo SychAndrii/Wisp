@@ -1,4 +1,4 @@
-﻿namespace SharedInfrastructure
+﻿namespace SharedInfrastructure.Base
 {
     public interface IInfrastructureMapper
     {

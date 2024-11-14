@@ -10,10 +10,16 @@ namespace ExercisesApplication.Services
         private readonly IExercisesStore store = store;
         private readonly IApplicationMapper mapper = mapper;
 
-        public async Task<StandardExercise> AddExercise(AddStandardExerciseDTO dto)
+        public async Task<StandardExercise> AddExercise(StandardExerciseDTO dto)
         {
             StandardExercise exercise = mapper.Map<StandardExercise>(dto);
             StandardExercise result = await store.AddExercise(exercise);
+            return result;
+        }
+
+        public async Task<IEnumerable<StandardExercise>> GetExercises()
+        {
+            IEnumerable<StandardExercise> result = await store.GetExercises();
             return result;
         }
     }

@@ -4,6 +4,7 @@ namespace ExercisesDomain.Stores
 {
     public interface IExercisesStore
     {
-        Task<StandardExercise> AddExercise(StandardExercise exercise);
+        public Task<StandardExercise> AddExercise(StandardExercise exercise);
+        public Task<IEnumerable<StandardExercise>> GetExercises();
     }
 }

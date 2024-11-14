@@ -1,5 +1,6 @@
 ﻿using ExercisesDomain.Aggregates;
 using ExercisesDomain.Stores;
+using Microsoft.EntityFrameworkCore;
 
 namespace ExercisesInfrastructure.Stores
 {
@@ -12,6 +13,11 @@ namespace ExercisesInfrastructure.Stores
             await context.StandardExercises.AddAsync(exercise);
             await context.SaveChangesAsync();
             return exercise;
+        }
+
+        public async Task<IEnumerable<StandardExercise>> GetExercises()
+        {
+            return await context.StandardExercises.ToListAsync();
         }
     }
 }
