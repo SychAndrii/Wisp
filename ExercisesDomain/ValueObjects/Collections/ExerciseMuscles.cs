@@ -22,6 +22,11 @@ namespace ExercisesDomain.ValueObjects.Collections
                 throw new InvalidFieldException("There has to be at least one primary muscle.");
             }
 
+            if (!primaryMuscles.Any() && secondaryMuscles.Any())
+            {
+                throw new InvalidFieldException("If you have secondary muscles, you also need to have primary muscles.");
+            }
+
             if (primaryMuscles.Intersect(secondaryMuscles).Any())
             {
                 throw new InvalidFieldException($"Primary and secondary muscles have to contain different values.");

@@ -63,16 +63,41 @@ namespace ExercisesDomain.Builders
             return this;
         }
 
+        public ExerciseCoreBuilder FromAnotherCore(ExerciseCore anotherCore)
+        {
+            _name = anotherCore.Name;
+            _difficulty = anotherCore.Difficulty;
+            _description = anotherCore.Description;
+            _primaryMuscles = anotherCore.Muscles?.PrimaryMuscles.ToHashSet() ?? [];
+            _secondaryMuscles = anotherCore.Muscles?.SecondaryMuscles.ToHashSet() ?? [];
+            _equipment = anotherCore.Equipment;
+            _metrics = anotherCore.Metrics?.Metrics.ToHashSet() ?? [];
+
+            return this;
+        }
+
         public ExerciseCore Build()
         {
+            ExerciseMuscles? muscles = null;
+            if (_primaryMuscles.Count != 0 || _secondaryMuscles.Count != 0)
+            {
+                muscles = ExerciseMuscles.Create(_primaryMuscles, _secondaryMuscles);
+            }
+
+            ExerciseMetrics? metrics = null;
+            if (_metrics.Count != 0)
+            {
+                metrics = ExerciseMetrics.Create(_metrics);
+            }
+
             return ExerciseCore.Create(
                 _id,
                 _name,
                 _difficulty,
                 _description,
-                ExerciseMuscles.Create(_primaryMuscles, _secondaryMuscles),
+                muscles,
                 _equipment,
-                ExerciseMetrics.Create(_metrics)
+                metrics
             );
         }
     }
