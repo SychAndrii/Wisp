@@ -1,14 +1,14 @@
-﻿using ExercisesApplication.Contracts.Exercise;
+﻿using ExercisesApplication.Contracts;
 using ExercisesDomain.Aggregates;
 using ExercisesDomain.Stores;
 using SharedApplication.Base;
 
 namespace ExercisesApplication.Services
 {
-    public class ExerciseService(IExercisesStore store, IMapper mapper)
+    public class ExerciseService(IExercisesStore store, IApplicationMapper mapper)
     {
         private readonly IExercisesStore store = store;
-        private readonly IMapper mapper = mapper;
+        private readonly IApplicationMapper mapper = mapper;
 
         public async Task<StandardExercise> AddExercise(AddStandardExerciseDTO dto)
         {

@@ -1,4 +1,6 @@
-﻿namespace ExercisesApplication.Contracts.Exercise
+﻿#pragma warning disable CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring as nullable.
+
+namespace ExercisesApplication.Contracts
 {
     public record AddStandardExerciseDTO
     {
@@ -13,3 +15,5 @@
         public string VideoURL { get; init; }
     }
 }
+
+#pragma warning restore CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider adding the 'required' modifier or declaring as nullable.

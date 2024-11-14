@@ -1,6 +1,6 @@
 ﻿namespace SharedApplication.Base
 {
-    public interface IMapper
+    public interface IApplicationMapper
     {
         TDestination Map<TDestination>(object source);
     }
