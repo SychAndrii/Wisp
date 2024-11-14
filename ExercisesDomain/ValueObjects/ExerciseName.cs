@@ -3,7 +3,7 @@ using SharedDomain.ValueObjects;
 
 namespace ExercisesDomain.ValueObjects
 {
-    public class ExerciseName
+    public record ExerciseName : ValueObject
     {
         public NormalizedString Value { get; }
 

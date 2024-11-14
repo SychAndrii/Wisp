@@ -2,9 +2,9 @@
 
 namespace SharedDomain.ValueObjects
 {
-    public record NormalizedString
+    public record NormalizedString : ValueObject
     {
-        public string Value { get; }
+        public string Value { get; init; }
 
         public NormalizedString(string value)
         {

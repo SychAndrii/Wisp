@@ -1,9 +1,10 @@
 ﻿using ExercisesDomain.ValueObjects.Collections;
 using ExercisesDomain.ValueObjects.Enums;
+using SharedDomain.ValueObjects;
 
 namespace ExercisesDomain.ValueObjects
 {
-    public class ExerciseCore
+    public record ExerciseCore : ValueObject
     {
         public ExerciseName Name { get; set; }
         public ExerciseDifficulty Difficulty { get; set; }

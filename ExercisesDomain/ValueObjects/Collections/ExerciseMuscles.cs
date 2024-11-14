@@ -1,10 +1,11 @@
 ﻿using ExercisesDomain.ValueObjects.Enums;
 using SharedDomain.Exceptions;
+using SharedDomain.ValueObjects;
 using System.Collections.Frozen;
 
 namespace ExercisesDomain.ValueObjects.Collections
 {
-    public class ExerciseMuscles
+    public record ExerciseMuscles : ValueObject
     {
         public FrozenSet<Muscle> PrimaryMuscles { get; }
         public FrozenSet<Muscle> SecondaryMuscles { get; }
