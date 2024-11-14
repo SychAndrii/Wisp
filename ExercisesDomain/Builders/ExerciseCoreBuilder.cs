@@ -8,7 +8,6 @@ namespace ExercisesDomain.Builders
 {
     public class ExerciseCoreBuilder
     {
-        private Guid _id = Guid.NewGuid();
         private ExerciseName _name = ExerciseName.Create(new NormalizedString("Default Name"));
         private ExerciseDifficulty _difficulty = ExerciseDifficulty.MEDIUM;
         private ExerciseDescription? _description;
@@ -91,7 +90,6 @@ namespace ExercisesDomain.Builders
             }
 
             return ExerciseCore.Create(
-                _id,
                 _name,
                 _difficulty,
                 _description,

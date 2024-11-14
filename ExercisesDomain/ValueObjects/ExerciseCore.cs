@@ -5,7 +5,6 @@ namespace ExercisesDomain.ValueObjects
 {
     public class ExerciseCore
     {
-        public Guid Id { get; }
         public ExerciseName Name { get; set; }
         public ExerciseDifficulty Difficulty { get; set; }
         public ExerciseDescription? Description { get; set; }
@@ -13,15 +12,13 @@ namespace ExercisesDomain.ValueObjects
         public ExerciseEquipment? Equipment { get; set; }
         public ExerciseMetrics? Metrics { get; set; }
 
-        private ExerciseCore(Guid id,
-                           ExerciseName name,
+        private ExerciseCore(ExerciseName name,
                            ExerciseDifficulty difficulty,
                            ExerciseDescription? desc,
                            ExerciseMuscles? muscles,
                            ExerciseEquipment? equipment,
                            ExerciseMetrics? metrics)
         {
-            Id = id;
             Name = name;
             Difficulty = difficulty;
             Description = desc;
@@ -30,15 +27,14 @@ namespace ExercisesDomain.ValueObjects
             Metrics = metrics;
         }
 
-        public static ExerciseCore Create(Guid id,
-                                      ExerciseName name,
+        public static ExerciseCore Create(ExerciseName name,
                                       ExerciseDifficulty difficulty,
                                       ExerciseDescription? desc,
                                       ExerciseMuscles? muscles,
                                       ExerciseEquipment? equipment,
                                       ExerciseMetrics? metrics)
         {
-            return new ExerciseCore(id, name, difficulty, desc, muscles, equipment, metrics);
+            return new ExerciseCore(name, difficulty, desc, muscles, equipment, metrics);
         }
     }
 }
