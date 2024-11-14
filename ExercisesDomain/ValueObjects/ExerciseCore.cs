@@ -1,17 +1,17 @@
 ﻿using ExercisesDomain.ValueObjects.Collections;
 using ExercisesDomain.ValueObjects.Enums;
-using SharedDomain.ValueObjects;
+using SharedDomain.Base;
 
 namespace ExercisesDomain.ValueObjects
 {
     public record ExerciseCore : ValueObject
     {
-        public ExerciseName Name { get; set; }
-        public ExerciseDifficulty Difficulty { get; set; }
-        public ExerciseDescription? Description { get; set; }
-        public ExerciseMuscles? Muscles { get; set; }
-        public ExerciseEquipment? Equipment { get; set; }
-        public ExerciseMetrics? Metrics { get; set; }
+        public ExerciseName Name { get; }
+        public ExerciseDifficulty Difficulty { get; }
+        public ExerciseDescription? Description { get; }
+        public ExerciseMuscles? Muscles { get; }
+        public ExerciseEquipment? Equipment { get; }
+        public ExerciseMetrics? Metrics { get; }
 
         private ExerciseCore(ExerciseName name,
                            ExerciseDifficulty difficulty,

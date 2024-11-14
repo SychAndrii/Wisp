@@ -1,4 +1,5 @@
-﻿using SharedDomain.Exceptions;
+﻿using SharedDomain.Base;
+using SharedDomain.Exceptions;
 using SharedDomain.ValueObjects;
 
 namespace ExercisesDomain.ValueObjects
@@ -35,7 +36,7 @@ namespace ExercisesDomain.ValueObjects
             {
                 throw new InvalidFieldException($"{nameof(name)} cannot be shorter than {MIN_NAME_LENGTH} characters.");
             }
-            if (!name.OnlyContainsLettersAndSpaces())
+            if (!name.MatchesRegex(@"^[A-Za-z\s]+$"))
             {
                 throw new InvalidFieldException($"{nameof(name)} cannot contain characters other than uppercase or lowercase letters and spaces.");
             }

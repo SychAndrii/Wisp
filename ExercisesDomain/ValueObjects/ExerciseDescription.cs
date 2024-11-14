@@ -1,4 +1,5 @@
-﻿using SharedDomain.Exceptions;
+﻿using SharedDomain.Base;
+using SharedDomain.Exceptions;
 using SharedDomain.ValueObjects;
 
 namespace ExercisesDomain.ValueObjects

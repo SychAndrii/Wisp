@@ -1,4 +1,5 @@
-﻿using System.Text.RegularExpressions;
+﻿using SharedDomain.Base;
+using System.Text.RegularExpressions;
 
 namespace SharedDomain.ValueObjects
 {
@@ -24,23 +25,6 @@ namespace SharedDomain.ValueObjects
         public bool MatchesRegex(string pattern)
         {
             return Regex.IsMatch(Value, pattern);
-        }
-
-        public bool IsHttpLink()
-        {
-            const string httpPattern = @"^http:\/\/[a-zA-Z0-9\-_]+(\.[a-zA-Z0-9\-_]+)+(:\d+)?(\/.*)?$";
-            return MatchesRegex(httpPattern);
-        }
-
-        public bool IsHttpsLink()
-        {
-            const string httpsPattern = @"^https:\/\/[a-zA-Z0-9\-_]+(\.[a-zA-Z0-9\-_]+)+(:\d+)?(\/.*)?$";
-            return MatchesRegex(httpsPattern);
-        }
-
-        public bool OnlyContainsLettersAndSpaces()
-        {
-            return MatchesRegex(@"^[A-Za-z\s]+$");
         }
 
         public override string ToString() => Value;

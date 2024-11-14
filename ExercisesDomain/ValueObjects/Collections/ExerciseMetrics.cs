@@ -1,6 +1,6 @@
 ﻿using ExercisesDomain.ValueObjects.Enums;
+using SharedDomain.Base;
 using SharedDomain.Exceptions;
-using SharedDomain.ValueObjects;
 using System.Collections.Frozen;
 
 namespace ExercisesDomain.ValueObjects.Collections
