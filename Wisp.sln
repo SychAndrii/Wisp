@@ -19,7 +19,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExercisesInfrastructure", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SharedApplication", "SharedApplication\SharedApplication.csproj", "{D99E3F50-C66D-454C-A2C9-32B39214DDD5}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentations", "Presentations", "{D1319CC7-488F-4311-997B-D3B64E81C83F}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Clients", "Clients", "{D1319CC7-488F-4311-997B-D3B64E81C83F}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SharedInfrastructure", "SharedInfrastructure\SharedInfrastructure.csproj", "{3658F1BF-DA98-48EC-A88A-73CA468318E4}"
 EndProject
@@ -27,7 +27,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SharedPresentation", "Share
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExercisesPresentation", "ExercisesPresentation\ExercisesPresentation.csproj", "{56478B80-410F-4FDB-9CF7-0DD2C4BF7117}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExercisesComposition", "ExercisesComposition\ExercisesComposition.csproj", "{7FF1BA8F-22F9-4866-BE3E-25DC33DE6506}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExercisesComposition", "ExercisesComposition\ExercisesComposition.csproj", "{7FF1BA8F-22F9-4866-BE3E-25DC33DE6506}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
