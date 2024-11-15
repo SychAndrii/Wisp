@@ -1,5 +1,6 @@
 ﻿using Discord.Interactions;
 using Discord.WebSocket;
+using System.Reflection;
 
 namespace Discord
 {
@@ -15,6 +16,11 @@ namespace Discord
         {
             client.Ready += () => OnClientReady(guildID);
             client.InteractionCreated += OnClientInteractionCreated;
+            interactionService.Log += msg =>
+            {
+                Console.WriteLine($"[InteractionService] {msg}");
+                return Task.CompletedTask;
+            };
             await client.LoginAsync(TokenType.Bot, token);
             await client.StartAsync();
         }
@@ -35,7 +41,8 @@ namespace Discord
         private async Task OnClientReady(ulong? guildID)
         {
             Console.WriteLine("Bot is connected!");
-            await interactionService.AddModulesAsync(typeof(App).Assembly, serviceProvider);
+            var modules = await interactionService.AddModulesAsync(Assembly.GetExecutingAssembly(), serviceProvider);
+            Console.WriteLine($"Loaded {modules.Count()} modules.");
 
             if (guildID.HasValue)
             {
