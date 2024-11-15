@@ -363,3 +363,4 @@ MigrationBackup/
 FodyWeavers.xsd
 Discord/appsettings.json
 /git-filter-repo
+/Discord/Properties/launchSettings.json
