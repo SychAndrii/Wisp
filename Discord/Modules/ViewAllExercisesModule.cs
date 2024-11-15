@@ -3,7 +3,7 @@ using Discord.Models;
 
 namespace Discord.Modules
 {
-    public class ExerciseModule : InteractionModuleBase<SocketInteractionContext>
+    public class ViewAllExercisesModule : InteractionModuleBase<SocketInteractionContext>
     {
         private static readonly List<Exercise> Exercises = new List<Exercise>
         {
