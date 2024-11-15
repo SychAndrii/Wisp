@@ -1,0 +1,41 @@
+﻿namespace ExercisesDomain.ValueObjects.Enums
+{
+    public enum ExerciseEquipment
+    {
+        DUMBBELL,
+        BARBELL,
+        KETTLEBELL,
+        RESISTANCE_BAND,
+        MACHINE,
+        CABLE_MACHINE,
+        SMITH_MACHINE,
+        PULL_UP_BAR,
+        BENCH,
+        MEDICINE_BALL,
+        STABILITY_BALL,
+        BOSU_BALL,
+        FOAM_ROLLER,
+        SUSPENSION_TRAINER,
+        LEG_PRESS_MACHINE,
+        ROWING_MACHINE,
+        TREADMILL,
+        ELLIPTICAL,
+        STAIR_CLIMBER,
+        BIKE,
+        JUMP_ROPE,
+        SLED,
+        BATTLE_ROPE,
+        SANDBAG,
+        YOGA_MAT,
+        AB_WHEEL,
+        WEIGHT_PLATE,
+        GLUTE_HAM_DEVELOPER,
+        PARALLEL_BARS,
+        DIP_STATION,
+        LANDMINE,
+        PLYOMETRIC_BOX,
+        POWER_RACK,
+        SLEDGEHAMMER,
+        FARMERS_CARRY_HANDLES
+    }
+}
