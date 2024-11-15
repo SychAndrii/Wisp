@@ -1,0 +1,27 @@
+﻿syntax = "proto3";
+
+option csharp_namespace = "ExerciseGrpc";
+
+// Define the gRPC service
+service ExerciseService {
+    rpc AddExercise(StandardExerciseMessage) returns (StandardExerciseMessage);
+    rpc GetExercises(EmptyMessage) returns (ExerciseListMessage);
+}
+
+message StandardExerciseMessage {
+    string name = 1;
+    string difficulty = 2;
+    optional string description = 3;
+    optional string equipment = 4;
+    repeated string primary_muscles = 5;
+    repeated string secondary_muscles = 6;
+    repeated string metrics = 7;
+    string image_url = 8;
+    string video_url = 9;
+}
+
+message ExerciseListMessage {
+    repeated StandardExerciseMessage exercises = 1;
+}
+
+message EmptyMessage {}
