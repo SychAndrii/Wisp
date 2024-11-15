@@ -1,15 +1,21 @@
 ﻿using AutoMapper;
+using ExercisesPresentation.Profiles;
 using SharedPresentation.Base;
 
-namespace ExercisesPresentation.Mappers
+namespace ExercisesPresentationLibrary.Mappers
 {
     public class PresentationAutoMapper : IPresentationMapper
     {
         private readonly IMapper mapper;
 
-        public PresentationAutoMapper(IMapper mapper)
+        public PresentationAutoMapper()
         {
-            this.mapper = mapper;
+            var config = new MapperConfiguration(cfg =>
+            {
+                cfg.AddProfile<GRPCExerciseProfile>();
+            });
+
+            mapper = config.CreateMapper();
         }
 
         public TDestination Map<TDestination>(object source)

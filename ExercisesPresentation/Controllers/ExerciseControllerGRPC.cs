@@ -7,12 +7,12 @@ using GRPCService = ExerciseGrpc.ExerciseService;
 
 namespace ExercisesPresentation.Controllers
 {
-    public class GRPCController : GRPCService.ExerciseServiceBase
+    public class ExerciseControllerGRPC : GRPCService.ExerciseServiceBase
     {
         private readonly ApplicationService _exerciseService;
         private readonly IPresentationMapper _mapper;
 
-        public GRPCController(ApplicationService exerciseService, IPresentationMapper mapper)
+        public ExerciseControllerGRPC(ApplicationService exerciseService, IPresentationMapper mapper)
         {
             _exerciseService = exerciseService;
             _mapper = mapper;

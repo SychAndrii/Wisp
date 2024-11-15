@@ -1,4 +1,8 @@
 ﻿using AutoMapper;
+using ExercisesApplication.Contracts;
+using ExercisesDomain.Aggregates;
+using ExercisesDomain.ValueObjects;
+using ExercisesInfrastructure.Resolvers.Application;
 using SharedApplication.Base;
 
 namespace ExercisesInfrastructure.Mappers
@@ -7,9 +11,15 @@ namespace ExercisesInfrastructure.Mappers
     {
         private readonly IMapper mapper;
 
-        public ApplicationAutoMapper(IMapper mapper)
+        public ApplicationAutoMapper()
         {
-            this.mapper = mapper;
+            var config = new MapperConfiguration(cfg =>
+            {
+                cfg.CreateMap<ExerciseCoreDTO, ExerciseCore>().ConvertUsing<ExerciseCoreResolver>();
+                cfg.CreateMap<StandardExerciseDTO, StandardExercise>().ConvertUsing<StandardExerciseResolver>();
+            });
+
+            mapper = config.CreateMapper();
         }
 
         public TDestination Map<TDestination>(object source)
