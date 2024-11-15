@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.11.35327.3
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Discord", "Discord\Discord.csproj", "{F67045AD-D6B8-4EEB-A6D4-8D834E86DF60}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ExercisesService", "ExercisesService", "{D110B4B1-1CC2-48BC-93C7-1A9ADD52E674}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExercisesDomain", "ExercisesDomain\ExercisesDomain.csproj", "{26074CDF-039C-4547-9EBC-E3676B83DA0D}"
@@ -19,9 +17,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExercisesInfrastructure", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SharedApplication", "SharedApplication\SharedApplication.csproj", "{D99E3F50-C66D-454C-A2C9-32B39214DDD5}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Clients", "Clients", "{D1319CC7-488F-4311-997B-D3B64E81C83F}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SharedInfrastructure", "SharedInfrastructure\SharedInfrastructure.csproj", "{3658F1BF-DA98-48EC-A88A-73CA468318E4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Clients", "Clients", "{D1319CC7-488F-4311-997B-D3B64E81C83F}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SharedPresentation", "SharedPresentation\SharedPresentation.csproj", "{CB45524D-60BF-40F6-8480-84A326D61561}"
 EndProject
@@ -29,16 +27,14 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExercisesPresentation", "Ex
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExercisesComposition", "ExercisesComposition\ExercisesComposition.csproj", "{7FF1BA8F-22F9-4866-BE3E-25DC33DE6506}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Discord", "Discord\Discord.csproj", "{0F705A9A-13CD-491B-8AA1-737ACC55BA4C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{F67045AD-D6B8-4EEB-A6D4-8D834E86DF60}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F67045AD-D6B8-4EEB-A6D4-8D834E86DF60}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F67045AD-D6B8-4EEB-A6D4-8D834E86DF60}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F67045AD-D6B8-4EEB-A6D4-8D834E86DF60}.Release|Any CPU.Build.0 = Release|Any CPU
 		{26074CDF-039C-4547-9EBC-E3676B83DA0D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{26074CDF-039C-4547-9EBC-E3676B83DA0D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{26074CDF-039C-4547-9EBC-E3676B83DA0D}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -75,12 +71,15 @@ Global
 		{7FF1BA8F-22F9-4866-BE3E-25DC33DE6506}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7FF1BA8F-22F9-4866-BE3E-25DC33DE6506}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7FF1BA8F-22F9-4866-BE3E-25DC33DE6506}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0F705A9A-13CD-491B-8AA1-737ACC55BA4C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F705A9A-13CD-491B-8AA1-737ACC55BA4C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F705A9A-13CD-491B-8AA1-737ACC55BA4C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F705A9A-13CD-491B-8AA1-737ACC55BA4C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{F67045AD-D6B8-4EEB-A6D4-8D834E86DF60} = {D1319CC7-488F-4311-997B-D3B64E81C83F}
 		{26074CDF-039C-4547-9EBC-E3676B83DA0D} = {D110B4B1-1CC2-48BC-93C7-1A9ADD52E674}
 		{B6AD36D5-BF5A-47B9-8DC6-7F1ECF16FC1F} = {E68F71CB-78C8-42EE-A6F0-D0BD89168432}
 		{00B9B9CB-4EF7-4210-8F93-07924D86CAB0} = {D110B4B1-1CC2-48BC-93C7-1A9ADD52E674}
@@ -90,6 +89,7 @@ Global
 		{CB45524D-60BF-40F6-8480-84A326D61561} = {E68F71CB-78C8-42EE-A6F0-D0BD89168432}
 		{56478B80-410F-4FDB-9CF7-0DD2C4BF7117} = {D110B4B1-1CC2-48BC-93C7-1A9ADD52E674}
 		{7FF1BA8F-22F9-4866-BE3E-25DC33DE6506} = {D110B4B1-1CC2-48BC-93C7-1A9ADD52E674}
+		{0F705A9A-13CD-491B-8AA1-737ACC55BA4C} = {D1319CC7-488F-4311-997B-D3B64E81C83F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {64E9E86C-AEAD-479F-8BEC-C58F4311F4AA}
